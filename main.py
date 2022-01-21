@@ -9,13 +9,14 @@ from datetime import date, datetime
 from cryptography.fernet import Fernet
 from ftplib import FTP
 from auto_email import AutoEmailer
+# These variables have awful names for the sake of obfuscation.
 from my_secrets import K, F_H, F_U, F_P, FB_U, E, C_USER, XS
 
 
 def main():
     fernet = Fernet(K)
 
-    # Paths, FTP, Etc.
+    # Paths, FTP, etc.
     Path(f'metrics_files').mkdir(exist_ok=True)
     local_metrics_dir = Path(f'metrics_files').absolute()
     remote_metrics_dir = '/Metrics'
